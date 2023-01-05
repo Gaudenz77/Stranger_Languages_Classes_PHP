@@ -29,8 +29,8 @@
             
             <div class="col-sm">
             <h1 id="app" style="color:rgb(83, 7, 27)">We value your input always. For questions or ideas write to me <a href="mailto:gaudenzraiber@yahoo.de" style="font-size:90%;">@Krakatoom</a></h1>
-                <a name="back" id="back" class="btn btn-warning text-white" href="/index.html" role="button">Back to Klingon homepage!</a>
-                <a name="back" id="back" class="btn btn-success" href="/index_elves.html" role="button">Back to Elvspeak homepage!</a>
+                <a name="back" id="back" class="btn btn-warning text-white" href="/index.php" role="button">Back to Klingon homepage!</a>
+                <a name="back" id="back" class="btn btn-success" href="/index_elves.php" role="button">Back to Elvspeak homepage!</a>
             </div>
         </div>
           

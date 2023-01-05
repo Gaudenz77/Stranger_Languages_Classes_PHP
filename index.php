@@ -31,15 +31,15 @@
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             
                 <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-auto">
-                  <li><a href="index.html" class="nav-link px-2 text-white">Homepage</a></li>
-                  <li><a href="index_elves.html" class="nav-link px-2 text-white">Elvspeak</a></li>
+                  <li><a href="index.php" class="nav-link px-2 text-white">Homepage</a></li>
+                  <li><a href="index_elves.php" class="nav-link px-2 text-white">Elvspeak</a></li>
                   <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
                 </ul>
 
           <div class="text-end">
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-              <a href="index.html" type="button" class="btn btn-warning">Klingon</a>
-              <a href="index_elves.html" type="button" class="btn btn-success">Elvspeak</a>
+              <a href="index.php" type="button" class="btn btn-warning">Klingon</a>
+              <a href="index_elves.php" type="button" class="btn btn-success">Elvspeak</a>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
         <div class="col-sm px-5" style="height:max-content;">
           <p class="title-font-lead">Fill out the following form</p>
           <!-- <form id="formValidation" onsubmit="return validateAll();" action="./results.html"  method="get"> -->
-                    <form action="confirmation.html" class="" onsubmit="return validateAll();">
+                    <form action="confirmation.php" method="post" onsubmit="return validateAll();">
                       
                         <!-- <div id="errormessage"></div> -->
         
@@ -189,8 +189,8 @@
       <footer>
         <div class="container-fluid my-2 py-2">
           <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-auto">
-            <li><a href="index.html" class="nav-link px-2 text-white">Homepage</a></li>
-            <li><a href="index_elves.html" class="nav-link px-2 text-white">Klingon</a></li>
+            <li><a href="index.php" class="nav-link px-2 text-white">Homepage</a></li>
+            <li><a href="index_elves.php" class="nav-link px-2 text-white">Klingon</a></li>
             <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
           </ul>
         </div>
