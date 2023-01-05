@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
     <script src="./js/main.js" defer></script>
-    <script src="./js/confirmation.js"></script>
+    <!-- <script src="./js/confirmation.js"></script> -->
     <title>Document</title>
   </head>
   <body>
@@ -84,9 +84,9 @@
                             <span class="input-group-text">
                               <i class="bi bi-envelope-at-fill"></i>
                             </span>
-                            <input type="text" class="form-control text-white bg-dark" name="valMail" id="valMail" value="" placeholder="e.g me@expl.com" >
+                            <input type="text" class="form-control text-white bg-dark" name="email" id="valMail" value="" placeholder="e.g me@expl.com" >
                             <div class="input-group-text"  style="font-size: 80%"><label for="newsletter">Sub to Newsletter?</label>
-                              <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="" aria-label="Checkbox for following text input"></div>
+                              <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="checked" aria-label="Checkbox for following text input"></div>
                             </div>
         
                         <label for="valGender" class="form-label">Gender</label>
@@ -95,11 +95,28 @@
                           <span class="input-group-text">
                             <i class="fa-solid fa-mars-and-venus-burst"></i>
                           </span>
-                              <select class="form-select text-white bg-dark" id="valGender" name="valGender">
+                              <select class="form-select text-white bg-dark" id="valGender" name="gender">
                               <option value="" selected>-- Please choose an option --</option>
-                              <option value="male">Male</option>
+                              <?php
+                                // while loop generation of animal names
+                                $gender = array("Male", "Female", "Binary");
+                                $i = 0;
+                                $length = count($gender);
+
+                                while ($i < $length) {
+                                    $g = $gender[$i]; 
+                                    // echo '<option value="' . $m . '">'  . $m .  '</option>';
+                                    // mit string template shorter and easier format ("")
+                                    echo "<option value='$g'>$g</option>";
+                                    $i++; // long form: $i = $i +1
+                                }
+                            ?>
+
+
+
+                              <!-- <option value="male">Male</option>
                               <option value="female">Female</option>
-                              <option value="binary">Binary</option>
+                              <option value="binary">Binary</option> -->
                               </select>
                           </div>
         
@@ -127,47 +144,61 @@
                               <span class="input-group-text">
                                 <i class="fa-solid fa-circle-user"></i>
                               </span>
-                              <input type="number" class="form-control text-white bg-dark" id="valAge" name="valAge" value=""  min="0" max="150" placeholder="18 to 99">
+                              <input type="number" class="form-control text-white bg-dark" id="valAge" name="age" value=""  min="0" max="150" placeholder="18 to 99">
                             </div>                                                                                               
                           </div>
 
 
-        <div class="col-sm mt-5 mb-4 px-5">
+          <div class="col-sm mt-5 mb-4 px-5">
           <label for="telNumber" class="form-label" style="margin-top: 25px;">Enter your phone number:</label>
           <p id="message-6" class="messageError"></p>
           <div class="mb-4 input-group">
             <span class="input-group-text">
               <i class="fa-solid fa-phone-volume"></i>
               </span>
-            <input type="tel" class="form-control text-white bg-dark" id="telNumber" name="telNumber" placeholder="e.g 41-78-123-45-67" >
+            <input type="tel" class="form-control text-white bg-dark" id="telNumber" name="phone" placeholder="e.g 41-78-123-45-67" >
           </div>
   
           <!-- <p>pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" format="+41781234567"</p> -->
 
-        <label for="classLevel" class="form-label">Class Level</label>
-        <p id="message-7" class="messageError"></p>
-          <div class="mb-4 input-group">
-            <span class="input-group-text">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </span>
-                <select class="form-select text-white bg-dark" name="classLevel" id="classLevel">
-                <option value="" selected>-- Please choose a level --</option>
-                <option value="A0">Beginner A0</option>
-                <option value="B1">Advanced Degree B1</option>
-                <option value="C3">Master Degree C3</option>
+          <label for="classLevel" class="form-label">Class Level</label>
+          <p id="message-7" class="messageError"></p>
+            <div class="mb-4 input-group">
+                  <span class="input-group-text">
+                  <i class="fa-solid fa-graduation-cap"></i></span>
+                  <select class="form-select text-white bg-dark" name="level" id="classLevel">
+                  <option value="" selected>-- Please choose a level --</option>
+                            <?php
+                                // while loop generation of animal names
+                                $level = array("Beginner A0", "Advanced Degree B1", "Master Degree C3");
+                                $i = 0;
+                                $length = count($level);
+
+                                while ($i < $length) {
+                                    $l = $level[$i]; 
+                                    // echo '<option value="' . $m . '">'  . $m .  '</option>';
+                                    // mit string template shorter and easier format ("")
+                                    echo "<option value='$l'>$l</option>";
+                                    $i++; // long form: $i = $i +1
+                                }
+                            ?>
+
+                  <!-- <option value="A0">Beginner A0</option>
+                  <option value="B1">Advanced Degree B1</option>
+                  <option value="C3">Master Degree C3</option> -->
                 </select>
-          </div>
+            </div>
 
-          <div class="form-floating mb-4 mt-5">
-            <textarea name="myComment" id="myComment" class="form-control text-white bg-dark" style="height: 140px"></textarea>
-            <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary...</label>
-            </div> 
-            <!-- hidden input -->
-            <input type="hidden" id="myHidden" name="custId" value="Klingon">
+            <div class="form-floating mb-4 mt-5">
+              <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px"></textarea>
+              <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary...</label>
+              </div> 
+              <!-- hidden input -->
+              <input type="hidden" id="myHidden" name="custId" value="Klingon">
 
-          <div class="mb-4 text-center">    
-            <input type="submit" class="btn btn-success" value="Submit">
-            <!-- <button type="submit" class="btn btn-secondary" value="register">submit</button> --></div>
+            <div class="mb-4 text-center">    
+              <input type="submit" class="btn btn-success" value="Submit">
+              <!-- <button type="submit" class="btn btn-secondary" value="register">submit</button> --></div>
             </form>
     
             <!-- <div class="mb-4 text-center">
