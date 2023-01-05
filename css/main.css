@@ -57,8 +57,6 @@ font-family: 'Lexend Deca', sans-serif;
   
 }
 
-
-
 .content {
   background-color:#E4A11B ;
   opacity: 95%;
@@ -111,6 +109,12 @@ font-family: 'Lexend Deca', sans-serif;
 }
 
 .messageError {
+  color: rgb(255, 7, 7);
+  text-align:right;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.error {
   color: rgb(255, 7, 7);
   text-align:right;
   animation: glow 1s ease-in-out infinite alternate;

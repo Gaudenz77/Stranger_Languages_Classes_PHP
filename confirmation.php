@@ -13,12 +13,13 @@
     <!-- <script src="./js/confirmation.js"></script> -->
     <style>
         body {
-            background-size:auto;
+             height: 100%;
         }
     </style>
     <title>Document</title>
 </head>
 <body>
+<main>
 
         <div class="container">
            <div class="row">
@@ -29,7 +30,7 @@
                 include './includes/tools.php';
                 ?>
                            
-                <?php prettyPrint($_POST); ?>
+                <?php // prettyPrint($_POST); ?>
 
                 <?php // echo print_r($_POST); ?>
    
@@ -47,66 +48,7 @@
                 Your language chosen is: <?php echo $_POST["custId"]; ?><br>
 
                 
-                <!-- Fill-Email -->
-                <?php
-                echo "<br>";
-                if (strlen($_POST["email"]) === 0) {
-                    $email = $_POST["email"];
-                    echo "Please enter your email";
-                 }
-                 echo "<br>";
-                ?>
-                <!-- Fill-Gender missing -->
-                <?php
-                if (strlen($_POST["gender"]) === 0) {
-                    $email = $_POST["email"];
-                    echo "Please enter a gender";
-                 }
-                 echo "<br>";
-                ?>
-                <!-- Fill-fName missing -->
-                <?php
-                if (strlen($_POST["fName"]) === 0) {
-                    $email = $_POST["fName"];
-                    echo "Please enter your first name";
-                 }
-                 echo "<br>";
-                ?>
-                
-                <!-- Fill-lName missing -->
-                <?php
-                if (strlen($_POST["lName"]) === 0) {
-                    $email = $_POST["lName"];
-                    echo "Please enter your last name";
-                 }
-                 echo "<br>";
-                ?>
-                <!-- Fill-age missing -->
-                <?php
-                if (strlen($_POST["age"]) === 0) {
-                    $email = $_POST["age"];
-                    echo "Please enter your age between 18 nd 99";
-                 }
-                 echo "<br>";
-                ?>
-                <!-- Fill-phone missing -->
-                <?php
-                if (strlen($_POST["phone"]) === 0) {
-                    $email = $_POST["phone"];
-                    echo "Please enter your phone-no.";
-                 }
-                 echo "<br>";
-                ?>
-                <!-- Fill-level missing -->
-                <?php
-                if (strlen($_POST["level"]) === 0) {
-                    $email = $_POST["level"];
-                    echo "Please enter a class level";
-                 }
-                 echo "<br>";
-                ?>
-                <!-- Fill-level missing -->
-                
+
                 
                 
 <?php
@@ -152,9 +94,14 @@ echo "<br>";
                 <a name="back" id="back" class="btn btn-warning text-white" href="/index.php" role="button">Back to Klingon homepage!</a>
                 <a name="back" id="back" class="btn btn-success" href="/index_elves.php" role="button">Back to Elvspeak homepage!</a>
             </div>
-        </div>
-        
+      
 
+
+        <?php
+                include './includes/footer_conf.php';
+                ?>
+        
+</main>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>

@@ -72,37 +72,108 @@
         <div class="filler"></div>
 
         <div class="col-sm px-5" style="height:max-content;">
-          <p class="title-font-lead">Fill out the following form</p>
+          <p class="title-font-lead">Fill out the following form - and recheck your entries</p>
           <!-- <form id="formValidation" onsubmit="return validateAll();" action="./results.html"  method="get"> -->
-                <?php /* define variables and set to empty values
-                $nameErr = $emailErr = $genderErr = $websiteErr = "";
-                $name = $email = $gender = $comment = $website = "";
-          
-                    if   
-                   ($_SERVER["REQUEST_METHOD"] == "POST") {if (empty($_POST["email"])) {
-                    if (empty($_POST["email"])) {
-                      $emailErr = "Email is required";
-                  } else {
-                      $email = test_input($_POST["email"]);
-                  }              } }
-                    */?>
-                    <form action="confirmation.php" method="post" onsubmit="return validateAll();">
+<!-- FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START -FORM START - FORM START - FORM START - -->
+<?php
+// define variables and set to empty values
+  $emailErr = $genderErr = $fNameErr = $lNameErr = $ageErr = $phoneErr = $levelErr = $commentaryErr = "";
+  $email = $gender = $fName = $lName = $age = $phone = $level = $commentary = "";
+  $valid = true;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+
+if (empty($_POST["email"])) {
+    $valid=false;
+    $emailErr = "Email is required";
+} else {
+    $email = test_input($_POST["email"]);
+}
+
+if (empty($_POST["gender"])) {
+  $valid=false;
+  $genderErr = "Gender is required";
+} else {
+  $gender = test_input($_POST["gender"]);
+}
+    
+if (empty($_POST["fName"])) {
+  $valid=false;
+  $fNameErr = "First Name is required";
+} else {
+  $fName = test_input($_POST["fName"]);
+}
+
+if (empty($_POST["lName"])) {
+  $valid=false;
+  $lNameErr = "Last Name is required";
+} else {
+  $lName = test_input($_POST["lName"]);
+}
+
+if (empty($_POST["age"])) {
+  $valid=false;
+  $ageErr = "Age is required";
+} else {
+  $age = test_input($_POST["age"]);
+}
+
+if (empty($_POST["phone"])) {
+  $valid=false;
+  $phoneErr = "Phone-No. is required";
+} else {
+  $phone = test_input($_POST["phone"]);
+}
+
+if (empty($_POST["level"])) {
+  $valid=false;
+  $levelErr = "Level is required";
+} else {
+  $level = test_input($_POST["level"]);
+}
+
+if (empty($_POST["commentary"])) {
+  $valid=false;
+  $commentaryErr = "Please enter a commentary";
+} else {
+  $commentary = test_input($_POST["commentary"]);
+}
+
+if($valid){
+  include('confirmation.php');
+  exit();
+}
+
+}
+
+function test_input($data) {
+$data = trim($data);
+$data = stripslashes($data);
+$data = htmlspecialchars($data);
+return $data;
+}
+?>
+          
+          <p><span class="error">* required field</span></p>
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <!-- method="post" onsubmit="return validateAll();"> -->
+                    <!-- <form action="confirmation.php" method="post" onsubmit="return validateAll();">  --> 
                         <!-- <div id="errormessage"></div> -->
         
                         <label for="valMail" class="form-label" style="margin-top: 20px;">E-mail adress:</label>
                           <!-- <p id="message-1" class="messageError"></p> -->
+                          <span class="error">* <?php echo $emailErr;?></span><br>
                           <div class="mb-4 input-group">
                             <span class="input-group-text">
                               <i class="bi bi-envelope-at-fill"></i>
                             </span>
-                            <input type="text" class="form-control text-white bg-dark" name="email" id="valMail" value="" placeholder="e.g me@expl.com" ><!-- <span class="error">* <?php // echo $emailErr;?></span> -->
+                            <input type="text" class="form-control text-white bg-dark" name="email" id="valMail" value="" placeholder="e.g me@expl.com">
                             <div class="input-group-text"  style="font-size: 80%"><label for="newsletter">Sub to Newsletter?</label>
                               <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="" aria-label="Checkbox for following text input"></div>
                             </div>
         
                         <label for="valGender" class="form-label">Gender</label>
-                        <p id="message-2" class="messageError"></p>
+                        <!-- <p id="message-2" class="messageError"></p> -->
+                        <span class="error">* <?php echo $genderErr;?></span><br>
                         <div class="mb-4 input-group">
                           <span class="input-group-text">
                             <i class="fa-solid fa-mars-and-venus-burst"></i>
@@ -131,7 +202,8 @@
                           </div>
         
                             <label for="fName" class="form-label">First Name</label>
-                            <p id="message-3" class="messageError"></p>
+                            <!-- <p id="message-3" class="messageError"></p> -->
+                            <span class="error">* <?php echo $fNameErr;?></span><br>
                             <div class="mb-4 input-group">
                               <span class="input-group-text">
                                 <i class="fa-solid fa-circle-user"></i>
@@ -140,7 +212,8 @@
                             </div>
                             
                           <label for="lName" class="form-label">Last Name</label>
-                          <p id="message-4" class="messageError"></p>
+                          <!-- <p id="message-4" class="messageError"></p> -->
+                          <span class="error">* <?php echo $lNameErr;?></span><br>
                             <div class="mb-4 input-group">
                               <span class="input-group-text">
                                 <i class="fa-solid fa-circle-user"></i>
@@ -149,7 +222,8 @@
                             </div>
         
                             <label for="valAge" class="form-label">Your Age</label>
-                            <p id="message-5" class="messageError"></p>
+                            <!-- <p id="message-5" class="messageError"></p> -->
+                            <span class="error">* <?php echo $ageErr;?></span><br>
                             <div class="mb-4 input-group">
                               <span class="input-group-text">
                                 <i class="fa-solid fa-circle-user"></i>
@@ -161,7 +235,8 @@
 
           <div class="col-sm mt-5 mb-4 px-5">
           <label for="telNumber" class="form-label" style="margin-top: 25px;">Enter your phone number:</label>
-          <p id="message-6" class="messageError"></p>
+          <!-- <p id="message-6" class="messageError"></p> -->
+          <span class="error">* <?php echo $phoneErr;?></span><br>
           <div class="mb-4 input-group">
             <span class="input-group-text">
               <i class="fa-solid fa-phone-volume"></i>
@@ -172,7 +247,8 @@
           <!-- <p>pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" format="+41781234567"</p> -->
 
           <label for="classLevel" class="form-label">Class Level</label>
-          <p id="message-7" class="messageError"></p>
+          <!-- <p id="message-7" class="messageError"></p> -->
+          <span class="error">* <?php echo $levelErr;?></span><br>
             <div class="mb-4 input-group">
                   <span class="input-group-text">
                   <i class="fa-solid fa-graduation-cap"></i></span>
@@ -194,10 +270,10 @@
                             ?>
                 </select>
             </div>
-
+            * <?php echo $commentaryErr;?>
             <div class="form-floating mb-4 mt-5">
               <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px" name="commentary"></textarea>
-              <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary...</label>
+              <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary*...</label>
               </div> 
               <!-- hidden input -->
               <input type="hidden" id="myHidden" name="custId" value="Klingon">
@@ -206,7 +282,8 @@
               <input type="submit" class="btn btn-success" value="Submit">
               <!-- <button type="submit" class="btn btn-secondary" value="register">submit</button> --></div>
             </form>
-    
+<!-- FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - -->
+
             <!-- <div class="mb-4 text-center">
               <button type="reset" class="btn btn-secondary">Reset</button>
             </div> -->
