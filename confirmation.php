@@ -19,118 +19,130 @@
     <title>Document</title>
 </head>
 <body>
-   
+
         <div class="container">
            <div class="row">
             <div class="col-sm">
                 <h1 id="app" style="color:rgb(83, 7, 27)">Thank you for your registration. Your input values are the following:</h1>
                 <div class="alert alert-warning" role="alert">
-                <p class="mt-5">
+                <?php
+                include './includes/tools.php';
+                ?>
+                           
                 <?php prettyPrint($_POST); ?>
 
-                    
-<?php prettyPrint($_POST); ?>
+                <?php // echo print_r($_POST); ?>
+   
+                Welcome <?php echo $_POST["fName"]; ?>!<br>
 
-<?php  print_r($_POST); ?>
-<br>
+                Your E-mail-address is: <?php echo $_POST["email"]; ?><br>
+                <!-- Want newsletter: <?php // echo $_POST["newsletter"]; ?> --> <br>
+                Your Gender is: <?php echo $_POST["gender"]; ?><br>
+                Your first name is: <?php echo $_POST["fName"]; ?><br>
+                Your last name is: <?php echo $_POST["lName"]; ?><br>
+                Your age is: <?php echo $_POST["age"]; ?><br>
+                Your phone-no. is: <?php echo $_POST["phone"]; ?><br>
+                Your student level is: <?php echo $_POST["level"]; ?><br>
+                Your commentary is: <?php echo $_POST["commentary"]; ?><br>
+                Your language chosen is: <?php echo $_POST["custId"]; ?><br>
 
-    Welcome <?php echo $_POST["fName"]; ?>!<br>
-
-    Your E-mail-address is: <?php echo $_POST["email"]; ?><br>
-    Want newsletter?: <?php //echo $_POST["newsletter"]; ?><br>
-    Your Gender is: <?php echo $_POST["gender"]; ?><br>
-    Your first name is: <?php echo $_POST["fName"]; ?><br>
-    Your last name is: <?php echo $_POST["lName"]; ?><br>
-    Your age is: <?php echo $_POST["age"]; ?><br>
-    Your phone-no. is: <?php echo $_POST["phone"]; ?><br>
-    Your student level is: <?php echo $_POST["level"]; ?><br>
-    Your commentary is: <?php echo $_POST["commentary"]; ?><br>
-    Your language chosen is: <?php echo $_POST["custId"]; ?><br>
-
+                
+                <!-- Fill-Email -->
+                <?php
+                echo "<br>";
+                if (strlen($_POST["email"]) === 0) {
+                    $email = $_POST["email"];
+                    echo "Please enter your email";
+                 }
+                 echo "<br>";
+                ?>
+                <!-- Fill-Gender missing -->
+                <?php
+                if (strlen($_POST["gender"]) === 0) {
+                    $email = $_POST["email"];
+                    echo "Please enter a gender";
+                 }
+                 echo "<br>";
+                ?>
+                <!-- Fill-fName missing -->
+                <?php
+                if (strlen($_POST["fName"]) === 0) {
+                    $email = $_POST["fName"];
+                    echo "Please enter your first name";
+                 }
+                 echo "<br>";
+                ?>
+                
+                <!-- Fill-lName missing -->
+                <?php
+                if (strlen($_POST["lName"]) === 0) {
+                    $email = $_POST["lName"];
+                    echo "Please enter your last name";
+                 }
+                 echo "<br>";
+                ?>
+                <!-- Fill-age missing -->
+                <?php
+                if (strlen($_POST["age"]) === 0) {
+                    $email = $_POST["age"];
+                    echo "Please enter your age between 18 nd 99";
+                 }
+                 echo "<br>";
+                ?>
+                <!-- Fill-phone missing -->
+                <?php
+                if (strlen($_POST["phone"]) === 0) {
+                    $email = $_POST["phone"];
+                    echo "Please enter your phone-no.";
+                 }
+                 echo "<br>";
+                ?>
+                <!-- Fill-level missing -->
+                <?php
+                if (strlen($_POST["level"]) === 0) {
+                    $email = $_POST["level"];
+                    echo "Please enter a class level";
+                 }
+                 echo "<br>";
+                ?>
+                <!-- Fill-level missing -->
+                
+                
+                
 <?php
 
-/*
-    Die ausgewählten Farbwerte herausfiltern und als einfache Liste 
-    ausgeben.
 
-    Für foreach siehe auch https://www.w3schools.com/php/php_looping_foreach.asp
-
-    Wir verwenden die erweiterte Form von foreach ($_POST as $value) {},
-    nämlich foreach ($_POST as $key => $value) {}.
-  */
-
-
-// feedback on mammal chosen
-$gender = $_POST["gender"];
+/* $gender = $_POST["gender"];
 $level = $_POST["level"];
-
- //listi of mammals
-
-/* if ($gender === "Male") {
-    echo "manly";
-}
-elseif ($gender === "Female") {
-    echo "something Horse ";
-}
-
-elseif ($gender === "Binary") {
-    echo "binary";
-}
-
-else {
-    // echo "everything else.."
-} */
-
-
-/* switch($gender) {
-    case "Male": 
-    echo "its a beefy thingy!.";
-    break;
-
-    case "Female": 
-    echo "stop horsing around...";
-    break;
-
-    case "Binary": 
-    echo "a goat is a goat of goat..";
-    break;
-
-    default:
-    echo "Oh my humnan...";
-
-} */
+$commentary = $_POST["commentary"]; */
 
 echo "<br>";
 
-// find Fuck and change to better word ("strlen" same as "length" in JS)
-if (strlen($_POST["commentary"]) > 0) {
+    // find Fuck and change to better word ("strlen" same as "length" in JS)
+    if (strlen($_POST["commentary"]) > 0) {
 
-// prepare varibles    
-$commentary = $_POST["commentary"];
-$needles = array("fuck", "Fuck", "fuCK", "asshole", "arschloch");
-$replace = "%*##ç%%&**";
+        // prepare varibles    
+        $commentary = $_POST["commentary"];
+        $needles = array("fuck", "Fuck", "fuCK", "asshole", "arschloch");
+        $replace = "%*##ç%%&**";
+    
+        // change to lowercase letters
+        $commentary = strtolower($commentary);
+    
+        // replace to placeholder
+        $commentary = str_replace($needles, $replace, $commentary);
+        echo "Your commentary:$commentary<br>";
+    
+        // if more than 20 letters warning
+        if (strlen($_POST["commentary"]) > 20) {
+        echo "You used more than 20 letters! - Change that. And dont curse ffs!";
+        }
 
-// change to lowercase letters
-$commenntary = strtolower($commentary);
-
-// replace to placeholder
-$commentary = str_replace($needles, $replace, $commentary);
-// echo "Your commentary:$commentary<br>";
-
-// if more than 20 letters warning
-if (strlen($_POST["commentary"]) > 20) {
-echo "You used more than 20 letters! - Change that. And dont curse ffs!";
-}
-
-}
-// Validate t f out of thius form!
+        
+    
+    }
+// Validate t f out of this form!
 ?><br>
-
-
-
-
-
-
 
                 </div>
             </div>

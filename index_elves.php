@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/d4cbcb96c8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
-    <script src="./js/main.js" defer></script>
+    <!-- <script src="./js/main.js" defer></script> -->
     <!-- <script src="./js/confirmation.js"></script> -->
     <title>Document</title>
     </head>

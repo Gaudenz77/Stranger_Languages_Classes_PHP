@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/d4cbcb96c8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
-    <script src="./js/main.js" defer></script>
+    <!-- <script src="./js/main.js" defer></script> -->
     <!-- <script src="./js/confirmation.js"></script> -->
     <title>Document</title>
   </head>
@@ -74,19 +74,31 @@
         <div class="col-sm px-5" style="height:max-content;">
           <p class="title-font-lead">Fill out the following form</p>
           <!-- <form id="formValidation" onsubmit="return validateAll();" action="./results.html"  method="get"> -->
+                <?php /* define variables and set to empty values
+                $nameErr = $emailErr = $genderErr = $websiteErr = "";
+                $name = $email = $gender = $comment = $website = "";
+          
+                    if   
+                   ($_SERVER["REQUEST_METHOD"] == "POST") {if (empty($_POST["email"])) {
+                    if (empty($_POST["email"])) {
+                      $emailErr = "Email is required";
+                  } else {
+                      $email = test_input($_POST["email"]);
+                  }              } }
+                    */?>
                     <form action="confirmation.php" method="post" onsubmit="return validateAll();">
-                      
+
                         <!-- <div id="errormessage"></div> -->
         
                         <label for="valMail" class="form-label" style="margin-top: 20px;">E-mail adress:</label>
-                          <p id="message-1" class="messageError"></p>
+                          <!-- <p id="message-1" class="messageError"></p> -->
                           <div class="mb-4 input-group">
                             <span class="input-group-text">
                               <i class="bi bi-envelope-at-fill"></i>
                             </span>
-                            <input type="text" class="form-control text-white bg-dark" name="email" id="valMail" value="" placeholder="e.g me@expl.com" >
+                            <input type="text" class="form-control text-white bg-dark" name="email" id="valMail" value="" placeholder="e.g me@expl.com" ><!-- <span class="error">* <?php // echo $emailErr;?></span> -->
                             <div class="input-group-text"  style="font-size: 80%"><label for="newsletter">Sub to Newsletter?</label>
-                              <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="checked" aria-label="Checkbox for following text input"></div>
+                              <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="" aria-label="Checkbox for following text input"></div>
                             </div>
         
                         <label for="valGender" class="form-label">Gender</label>
@@ -114,9 +126,7 @@
 
 
 
-                              <!-- <option value="male">Male</option>
-                              <option value="female">Female</option>
-                              <option value="binary">Binary</option> -->
+                              
                               </select>
                           </div>
         
@@ -144,7 +154,7 @@
                               <span class="input-group-text">
                                 <i class="fa-solid fa-circle-user"></i>
                               </span>
-                              <input type="number" class="form-control text-white bg-dark" id="valAge" name="age" value=""  min="0" max="150" placeholder="18 to 99">
+                              <input type="number" class="form-control text-white bg-dark" id="valAge" name="age" value="" placeholder="18 to 99"><!-- min="0" max="150" -->
                             </div>                                                                                               
                           </div>
 
@@ -182,15 +192,11 @@
                                     $i++; // long form: $i = $i +1
                                 }
                             ?>
-
-                  <!-- <option value="A0">Beginner A0</option>
-                  <option value="B1">Advanced Degree B1</option>
-                  <option value="C3">Master Degree C3</option> -->
                 </select>
             </div>
 
             <div class="form-floating mb-4 mt-5">
-              <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px"></textarea>
+              <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px" name="commentary"></textarea>
               <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary...</label>
               </div> 
               <!-- hidden input -->
