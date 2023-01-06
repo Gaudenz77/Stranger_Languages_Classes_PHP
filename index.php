@@ -12,7 +12,18 @@
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
     <!-- <script src="./js/main.js" defer></script> -->
     <!-- <script src="./js/confirmation.js"></script> -->
-    <title>Document</title>
+    <title>Stranger Tongues - Language Classes/Klingon</title>
+    <style>
+      body {
+        margin-top:18%;
+        background: url('../assets/img/klingon_city_in_fog_by_mylochka_d5ze1lb.png');
+        width: 100%;
+        height: auto;
+        background-size:cover;
+        background-repeat: no-repeat;
+        font-family: 'Lexend Deca', sans-serif;
+      }
+    </style>
   </head>
   <body>
 <main>
@@ -64,8 +75,7 @@
             <p class="lead" style="text-align: left;  padding-left: 2%;">
               Stranger Tongues&#8482; is the one and only language institute,
               that gives you first-hand knowledge in Kingon parlee, debating, storytelling
-              or simple greeting for not acting poorly educated meeting your first group of klingn intermissionaries.
-            </p>
+              or simple greeting for not acting poorly educated meeting your first group of klingn intermissionaries.</p>
             
             </div>
         </div>
@@ -304,7 +314,8 @@ return $data;
         <div class="container-fluid my-2 py-2">
           <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-auto">
             <li><a href="index.php" class="nav-link px-2 text-white">Homepage</a></li>
-            <li><a href="index_elves.php" class="nav-link px-2 text-white">Klingon</a></li>
+            <li><a href="index_elves.php" class="nav-link px-2 text-white">Learn Elvspeak</a></li>
+            <li><a href="index.php" class="nav-link px-2 text-white">Learn Klingon</a></li>
             <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
           </ul>
         </div>
