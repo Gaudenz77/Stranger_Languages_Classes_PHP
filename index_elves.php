@@ -174,9 +174,8 @@ return $data;
                           <span class="error">* <?php echo $emailErr;?></span><br>
                           <div class="mb-4 input-group">
                             <span class="input-group-text">
-                              <i class="bi bi-envelope-at-fill"></i>
-                            </span>
-                            <input type="text" class="form-control text-white bg-dark" name="email" id="valMail" value="" placeholder="e.g me@expl.com">
+                              <i class="bi bi-envelope-at-fill"></i></span>
+                            <input type="email" class="form-control text-white bg-dark" name="email" id="valMail" value="<?php echo $email;?>" placeholder="e.g me@expl.com">
                             <div class="input-group-text"  style="font-size: 80%"><label for="newsletter">Sub to Newsletter?</label>
                               <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="" aria-label="Checkbox for following text input"></div>
                             </div>
@@ -218,7 +217,7 @@ return $data;
                               <span class="input-group-text">
                                 <i class="fa-solid fa-circle-user"></i>
                               </span>
-                              <input type="text" class="form-control text-white bg-dark" id="fName" name="fName" value="" placeholder="e.g Gaudenz" >
+                              <input type="text" class="form-control text-white bg-dark" id="fName" name="fName" value="<?php echo $fName;?>" placeholder="e.g Gaudenz" >
                             </div>
                             
                           <label for="lName" class="form-label">Last Name</label>
@@ -228,7 +227,7 @@ return $data;
                               <span class="input-group-text">
                                 <i class="fa-solid fa-circle-user"></i>
                               </span>
-                              <input type="text" class="form-control text-white bg-dark" id="lName" name="lName" value="" placeholder="e.g Raiber" >
+                              <input type="text" class="form-control text-white bg-dark" id="lName" name="lName" value="<?php echo $lName;?>" placeholder="e.g Raiber" >
                             </div>
         
                             <label for="valAge" class="form-label">Your Age</label>
@@ -238,7 +237,7 @@ return $data;
                               <span class="input-group-text">
                                 <i class="fa-solid fa-circle-user"></i>
                               </span>
-                              <input type="number" class="form-control text-white bg-dark" id="valAge" name="age" value="" placeholder="18 to 99"><!-- min="0" max="150" -->
+                              <input type="number" class="form-control text-white bg-dark" id="valAge" name="age" value="<?php echo $age;?>" placeholder="18 to 99"><!-- min="0" max="150" -->
                             </div>                                                                                               
                           </div>
 
@@ -251,7 +250,7 @@ return $data;
             <span class="input-group-text">
               <i class="fa-solid fa-phone-volume"></i>
               </span>
-            <input type="tel" class="form-control text-white bg-dark" id="telNumber" name="phone" placeholder="e.g 41-78-123-45-67" >
+            <input type="tel" class="form-control text-white bg-dark" id="telNumber" name="phone" value="<?php echo $phone;?>" placeholder="e.g 41-78-123-45-67" >
           </div>
   
           <!-- <p>pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" format="+41781234567"</p> -->
@@ -280,9 +279,8 @@ return $data;
                             ?>
                 </select>
             </div>
-            * <?php echo $commentaryErr;?>
             <div class="form-floating mb-4 mt-5">
-              <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px" name="commentary"></textarea>
+              <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px" name="commentary"></textarea><p class="error">*<?php echo $commentaryErr;?></p>
               <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary*...</label>
               </div> 
               <!-- hidden input -->
