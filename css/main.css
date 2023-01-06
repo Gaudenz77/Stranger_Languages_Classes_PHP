@@ -1,7 +1,7 @@
 body {
 margin-top:18%;
-/* background: url('../assets/img/klingon_city_in_fog_by_mylochka_d5ze1lb.png');
- */width: 100%;
+background: url('../assets/img/klingon_city_in_fog_by_mylochka_d5ze1lb.png');
+width: 100%;
 height: auto;
 background-size:cover;
 background-repeat: no-repeat;
@@ -117,6 +117,7 @@ font-family: 'Lexend Deca', sans-serif;
 .error {
   color: rgb(255, 7, 7);
   text-align:right;
+  font-family: 'benguiatbold';
   animation: glow 1s ease-in-out infinite alternate;
 }
 

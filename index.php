@@ -82,7 +82,7 @@
         <div class="filler"></div>
 
         <div class="col-sm px-5" style="height:max-content;">
-          <p class="title-font-lead">Fill out the following form - and recheck your entries</p>
+          <p class="title-font-lead">Fill out the following form<br>- and recheck your entries</p>
           <!-- <form id="formValidation" onsubmit="return validateAll();" action="./results.html"  method="get"> -->
 <!-- FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START -FORM START - FORM START - FORM START - -->
 <?php
@@ -91,7 +91,6 @@
   $email = $gender = $fName = $lName = $age = $phone = $level = $commentary = "";
   $valid = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
 
 if (empty($_POST["email"])) {
     $valid=false;
@@ -164,7 +163,7 @@ return $data;
 }
 ?>
           
-          <p><span class="error">* required field</span></p>
+<p><span class="error">* required field</span></p>
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <!-- method="post" onsubmit="return validateAll();"> -->
                     <!-- <form action="confirmation.php" method="post" onsubmit="return validateAll();">  --> 
                         <!-- <div id="errormessage"></div> -->

@@ -82,7 +82,7 @@
         <div class="filler"></div>
 
         <div class="col-sm px-5" style="height:max-content;">
-          <p class="title-font-lead">Fill out the following form</p>
+          <p class="title-font-lead">Fill out the following form<br>- and recheck your entries</p>
              <!-- <form id="formValidation" onsubmit="return validateAll();" action="./results.html"  method="get"> -->
 <!-- FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START -FORM START - FORM START - FORM START - -->
 <?php
