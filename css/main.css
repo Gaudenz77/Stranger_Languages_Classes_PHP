@@ -151,6 +151,15 @@ font-family: 'Lexend Deca', sans-serif;
   font-weight: bold;
 }
 
+.footer {
+  position:sticky;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
 #footer1 {
   position:sticky;
   left: 0;

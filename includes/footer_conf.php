@@ -1,4 +1,4 @@
-<section id="footer1">
+<section id="footer">
       <footer>
         <div class="container-fluid my-2 py-2">
           <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-auto">

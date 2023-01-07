@@ -25,7 +25,7 @@
            <div class="row">
             <div class="col-sm">
                 <h1 id="app" style="color:rgb(83, 7, 27)">Thank you for your registration. Your input values are the following:</h1>
-                <div class="alert alert-warning" role="alert">
+                <div class="alert text-white" role="alert"> <!-- Check if with alert (light), (text-white) and color or not... -->
                 <?php
                 include './includes/tools.php';
                 ?>
