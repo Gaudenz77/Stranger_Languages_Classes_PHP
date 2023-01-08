@@ -71,7 +71,7 @@
                 <div class="col-sm m-5 p-5"></div>
               </div>
             </div>
-            <h1 class="display-3 title-font-content">Learn "Klingon" Now!</h1>
+            <h1 class="display-3 title-font-content">Learn Klingon Now!</h1>
             <p class="lead" style="text-align: left;  padding-left: 2%;">
               Stranger Tongues&#8482; is the one and only language institute,
               that gives you first-hand knowledge in Kingon parlee, debating, storytelling
