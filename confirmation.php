@@ -13,7 +13,7 @@
     <!-- <script src="./js/confirmation.js"></script> -->
     <style>
         body {
-             height: 100%;
+            height: 100%;
         }
     </style>
     <title>Document</title>

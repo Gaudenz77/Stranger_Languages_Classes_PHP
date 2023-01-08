@@ -90,14 +90,19 @@
   $emailErr = $genderErr = $fNameErr = $lNameErr = $ageErr = $phoneErr = $levelErr = $commentaryErr = "";
   $email = $gender = $fName = $lName = $age = $phone = $level = $commentary = "";
   $valid = true;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if (empty($_POST["email"])) {
-    $valid=false;
-    $emailErr = "Email is required";
+  $valid=false;
+  $emailErr = "Email is required";
 } else {
-    $email = test_input($_POST["email"]);
-}
+  $email = test_input($_POST["email"]);
+  // check if e-mail address is well-formed
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $emailErr = "Invalid email format";
+  }
+} // if input "text" then "else" necessary if "email" not necessary, field say "invalid" format is alerted.
 
 if (empty($_POST["gender"])) {
   $valid=false;
@@ -175,7 +180,7 @@ return $data;
                             <span class="input-group-text">
                               <i class="bi bi-envelope-at-fill"></i>
                             </span>
-                            <input type="email" class="form-control text-white bg-dark" name="email" id="valMail" value="<?php echo $email;?>" placeholder="e.g me@expl.com">
+                            <input type="text" class="form-control text-white bg-dark" name="email" id="valMail" value="<?php echo $email;?>" placeholder="e.g me@expl.com">
                             <div class="input-group-text"  style="font-size: 80%"><label for="newsletter">Sub to Newsletter?</label>
                               <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="" aria-label="Checkbox for following text input"></div>
                             </div>

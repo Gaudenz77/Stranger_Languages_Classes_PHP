@@ -90,6 +90,7 @@
   $emailErr = $genderErr = $fNameErr = $lNameErr = $ageErr = $phoneErr = $levelErr = $commentaryErr = "";
   $email = $gender = $fName = $lName = $age = $phone = $level = $commentary = "";
   $valid = true;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
@@ -97,8 +98,12 @@ if (empty($_POST["email"])) {
     $valid=false;
     $emailErr = "Email is required";
 } else {
-    $email = test_input($_POST["email"]);
-}
+  $email = test_input($_POST["email"]);
+  // check if e-mail address is well-formed
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $emailErr = "Invalid email format";
+  }
+} // if input "text" then "else" necessary if "email" not necessary, field say "invalid" format is alerted.
 
 if (empty($_POST["gender"])) {
   $valid=false;
