@@ -30,15 +30,15 @@
                 include './includes/tools.php';
                 ?>
                            
-                <?php // prettyPrint($_POST); ?>
+                <?php prettyPrint($_POST); ?>
 
-                <?php // echo print_r($_POST); ?>
+                <?php echo print_r($_POST); ?>
    
                 Welcome <?php echo $_POST["fName"]; ?>!<br>
 
                 Your E-mail-address is: <?php echo $_POST["email"]; ?><br>
                 <!-- Want newsletter: <?php // echo $_POST["newsletter"]; ?> --> <br>
-                Your Gender is: <?php echo $_POST["gender"]; ?><br>
+                Your gender is: <?php echo $_POST["gender"]; ?><br>
                 Your first name is: <?php echo $_POST["fName"]; ?><br>
                 Your last name is: <?php echo $_POST["lName"]; ?><br>
                 Your age is: <?php echo $_POST["age"]; ?><br>
@@ -47,12 +47,8 @@
                 Your commentary is: <?php echo $_POST["commentary"]; ?><br>
                 Your language chosen is: <?php echo $_POST["custId"]; ?><br>
 
-                
-
-                
-                
+  
 <?php
-
 
 /* $gender = $_POST["gender"];
 $level = $_POST["level"];
@@ -80,8 +76,6 @@ echo "<br>";
         echo "You used more than 20 letters! - Change that. And dont curse ffs!";
         }
 
-        
-    
     }
 // Validate t f out of this form!
 ?><br>

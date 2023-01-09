@@ -10,8 +10,8 @@
     <script src="https://kit.fontawesome.com/d4cbcb96c8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
-    <!-- <script src="./js/main.js" defer></script> -->
-    <!-- <script src="./js/confirmation.js"></script> -->
+    <script src="./js/main.js" defer></script>
+    <script src="./js/confirmation.js"></script>
     <title>Stranger Tongues - Language Classes/Klingon</title>
     <style>
       body {
@@ -87,7 +87,7 @@
 <!-- FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START -FORM START - FORM START - FORM START - -->
 <?php
 // define variables and set to empty values
-  $emailErr = $genderErr = $fNameErr = $lNameErr = $ageErr = $phoneErr = $levelErr = $commentaryErr = "";
+  $emailErr = $genderErr = $fNameErr = $lNameErr = $ageErr = $phoneErr = $levelErr = $commentaryErr =  "";
   $email = $gender = $fName = $lName = $age = $phone = $level = $commentary = "";
   $valid = true;
 
@@ -106,10 +106,27 @@ if (empty($_POST["email"])) {
 
 if (empty($_POST["gender"])) {
   $valid=false;
+
   $genderErr = "Gender is required";
+  
+ 
 } else {
   $gender = test_input($_POST["gender"]);
 }
+
+/* if (empty($_POST["gender"])) {
+$selected = $_POST["gender"];
+echo 'You have chosen: '.$selected;}
+else {
+  echo 'Please select the value.'; 
+  } */
+
+  if (empty ($_POST["gender"])) {
+        $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+    }
+
     
 if (empty($_POST["fName"])) {
   $valid=false;
@@ -125,12 +142,26 @@ if (empty($_POST["lName"])) {
   $lName = test_input($_POST["lName"]);
 }
 
+
 if (empty($_POST["age"])) {
   $valid=false;
   $ageErr = "Age is required";
-} else {
-  $age = test_input($_POST["age"]);
-}
+  
+} /* elseif (!preg_match ("/^[0-9]{2}*$/", $age)){
+  $valid=false;
+  $ageErr = "invalid";
+  
+}  *//* elseif ( $length < 2 && $length >  ) {
+  $age=strlen;
+  $valid=false;
+  $ageErr="only two digit";
+ 
+  } */
+
+  else {
+    $age = test_input($_POST["age"]);
+  }
+
 
 if (empty($_POST["phone"])) {
   $valid=false;
@@ -193,9 +224,9 @@ return $data;
                             <i class="fa-solid fa-mars-and-venus-burst"></i>
                           </span>
                               <select class="form-select text-white bg-dark" id="valGender" name="gender">
-                              <option value="" selected>-- Please choose an option --</option>
+                              <option value=" " selected>-- Please choose an option --</option>
                               <?php
-                                // while loop generation of animal names
+                                // while loop generation of gender types
                                 $gender = array("Male", "Female", "Binary");
                                 $i = 0;
                                 $length = count($gender);
@@ -208,13 +239,27 @@ return $data;
                                     $i++; // long form: $i = $i +1
                                 }
                             ?>
-
-
-
-                              
-                              </select>
+                                
+                            </select>
                           </div>
-        
+<!-- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -->
+                          
+                          <div class="mb-4 input-group">
+                          <span class="input-group-text">Gender
+                          <i class="fa-solid fa-circle-user m-2"></i></span>
+                          <label for="valGender" class="form-label m-2"></label>
+                          <input type="radio" id="male" name="radio-mood" value="Male">
+                          <label for="vehicle1">Male</label>
+                          <input type="radio" id="female" name="radio-mood" value="Female">
+                          <label for="vehicle1">Female</label>
+                          <input type="radio" id="binary" name="radio-mood" value="Binary">
+                          <label for="vehicle1">Binary</label><br>  </div>
+
+
+
+
+<!-- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -->
+
                             <label for="fName" class="form-label">First Name</label>
                             <!-- <p id="message-3" class="messageError"></p> -->
                             <span class="error">* <?php echo $fNameErr;?></span><br>
@@ -286,7 +331,7 @@ return $data;
             </div>
             <div class="form-floating mb-4 mt-5">
               <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px" name="commentary"></textarea><p class="error">*<?php echo $commentaryErr;?></p>
-              <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary*...</label>
+              <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary*...<br><?php echo $commentary;?></label>
               </div> 
               <!-- hidden input -->
               <input type="hidden" id="myHidden" name="custId" value="Klingon">

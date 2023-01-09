@@ -210,6 +210,12 @@ function setMessage7(value) {
 } 
 
 
+/* PHP */
+
+function run() {
+  document.getElementById("resultGender").innerHTML = document.getElementById("valGender").value;
+}
+
 
 
 
