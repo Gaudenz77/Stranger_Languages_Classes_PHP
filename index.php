@@ -106,27 +106,11 @@ if (empty($_POST["email"])) {
 
 if (empty($_POST["gender"])) {
   $valid=false;
-
   $genderErr = "Gender is required";
-  
- 
 } else {
   $gender = test_input($_POST["gender"]);
 }
-
-/* if (empty($_POST["gender"])) {
-$selected = $_POST["gender"];
-echo 'You have chosen: '.$selected;}
-else {
-  echo 'Please select the value.'; 
-  } */
-
-  if (empty ($_POST["gender"])) {
-        $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-    }
-
+ 
     
 if (empty($_POST["fName"])) {
   $valid=false;
@@ -224,7 +208,7 @@ return $data;
                             <i class="fa-solid fa-mars-and-venus-burst"></i>
                           </span>
                               <select class="form-select text-white bg-dark" id="valGender" name="gender">
-                              <option value=" " selected>-- Please choose an option --</option>
+                              <option value="" selected>-- Please choose an option --</option>
                               <?php
                                 // while loop generation of gender types
                                 $gender = array("Male", "Female", "Binary");
@@ -244,16 +228,24 @@ return $data;
                           </div>
 <!-- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -->
                           
+                          
+                         
+                          <label for="valGender" class="form-label">Gender</label>
+                          <span class="error">*<?php echo $genderErr;?></span><br>
                           <div class="mb-4 input-group">
-                          <span class="input-group-text">Gender
-                          <i class="fa-solid fa-circle-user m-2"></i></span>
-                          <label for="valGender" class="form-label m-2"></label>
-                          <input type="radio" id="male" name="radio-mood" value="Male">
-                          <label for="vehicle1">Male</label>
-                          <input type="radio" id="female" name="radio-mood" value="Female">
-                          <label for="vehicle1">Female</label>
-                          <input type="radio" id="binary" name="radio-mood" value="Binary">
-                          <label for="vehicle1">Binary</label><br>  </div>
+                          <span class="input-group-text"><i class="fa-solid fa-circle-user m-1 py-2"></i></span>
+                          <div class="form-check form-check-inline m-3">
+                            <input class="form-check-input bg-dark" type="radio" name="exampleRadios" id="exampleRadios1" value="male">
+                            <label class="form-check-label text-white " for="inlineCheckbox1">Male</label>
+                          </div>
+                          <div class="form-check form-check-inline m-3">
+                            <input class="form-check-input bg-dark" type="radio" name="exampleRadios" id="exampleRadios1" value="female">
+                            <label class="form-check-label text-white " for="inlineCheckbox2">Female</label>
+                          </div>
+                          <div class="form-check form-check-inline m-3">
+                            <input class="form-check-input bg-dark" type="radio" name="exampleRadios" id="exampleRadios1" value="binary ">
+                            <label class="form-check-label text-white " for="inlineCheckbox3">Binary</label>
+                          </div></div></label>
 
 
 
