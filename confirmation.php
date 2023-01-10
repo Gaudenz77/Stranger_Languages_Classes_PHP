@@ -19,6 +19,7 @@
     <title>Document</title>
 </head>
 <body>
+
 <main>
 
         <div class="container">
@@ -49,56 +50,55 @@
                 Your language chosen is: <?php echo $_POST["custId"]; ?><br>
 
   
-<?php
+                <?php
 
-/* $gender = $_POST["gender"];
-$level = $_POST["level"];
-$commentary = $_POST["commentary"]; */
+                /* $gender = $_POST["gender"];
+                $level = $_POST["level"];
+                $commentary = $_POST["commentary"]; */
 
-echo "<br>";
+                echo "<br>";
 
-    // find Fuck and change to better word ("strlen" same as "length" in JS)
-    if (strlen($_POST["commentary"]) > 0) {
+                    // find Fuck and change to better word ("strlen" same as "length" in JS)
+                    if (strlen($_POST["commentary"]) > 0) {
 
-        // prepare varibles    
-        $commentary = $_POST["commentary"];
-        $needles = array("fuck", "Fuck", "fuCK", "asshole", "arschloch");
-        $replace = "%*##ç%%&**";
-    
-        // change to lowercase letters
-        $commentary = strtolower($commentary);
-    
-        // replace to placeholder
-        $commentary = str_replace($needles, $replace, $commentary);
-        echo "Your commentary:$commentary<br>";
-    
-        // if more than 20 letters warning
-        if (strlen($_POST["commentary"]) > 20) {
-        echo "You used more than 20 letters! - Change that. And dont curse ffs!";
-        }
+                        // prepare varibles    
+                        $commentary = $_POST["commentary"];
+                        $needles = array("fuck", "Fuck", "fuCK", "asshole", "arschloch");
+                        $replace = "%*##ç%%&**";
+                    
+                        // change to lowercase letters
+                        $commentary = strtolower($commentary);
+                    
+                        // replace to placeholder
+                        $commentary = str_replace($needles, $replace, $commentary);
+                        echo "Your commentary:$commentary<br>";
+                    
+                        // if more than 20 letters warning
+                        if (strlen($_POST["commentary"]) > 20) {
+                        echo "You used more than 20 letters! - Change that. And dont curse ffs!";
+                        }
 
-    }
-// Validate t f out of this form!
-?><br>
-<p>
-Your chosen gender: <?php echo $_POST["gender"]; ?><br>
-</p>
-
-
+                    }
+                // Validate t f out of this form!
+                ?><br>
+                <p>
+                Your chosen gender: <?php echo $_POST["gender"]; ?><br>
+                </p>
                 </div>
             </div>
             
             <div class="col-sm">
-            <h1 id="app" style="color:rgb(83, 7, 27)">We value your input always. For questions or ideas write to me <a href="mailto:gaudenzraiber@yahoo.de" style="font-size:90%;">@Krakatoom</a></h1>
+                <h1 id="app" style="color:rgb(83, 7, 27)">We value your input always. For questions or ideas write to me <a href="mailto:gaudenzraiber@yahoo.de" style="font-size:90%;">@Krakatoom</a></h1>
                 <a name="back" id="back" class="btn btn-warning text-white" href="/index.php" role="button">Back to Klingon homepage!</a>
                 <a name="back" id="back" class="btn btn-success" href="/index_elves.php" role="button">Back to Elvspeak homepage!</a>
             </div>
       
 
 
-        <?php
-                require './includes/footer_conf.php';
-                ?>
+<?php
+require './includes/footer_conf.php';
+?>
+            
         
 </main>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
