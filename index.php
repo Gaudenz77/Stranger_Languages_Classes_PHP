@@ -66,6 +66,7 @@
   $emailErr = $genderErr = $fNameErr = $lNameErr = $ageErr = $phoneErr = $levelErr = $commentaryErr =  "";
   $email = $gender = $fName = $lName = $age = $phone = $level = $commentary = "";
   $valid = true;
+  
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -117,10 +118,15 @@ if (empty($_POST["age"])) {
   $ageErr="only two digit";
  
   } */
-
   else {
     $age = test_input($_POST["age"]);
   }
+
+/* 
+  if (!$age($ageval < 18 && £ageval > 99 )) {
+    $valid=false;
+    $ageErr = "not good age";
+} */
 
 
 if (empty($_POST["phone"])) {
