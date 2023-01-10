@@ -88,7 +88,7 @@ if (empty($_POST["commentary"])) {
 }
 
 if($valid){
-  require('confirmation.php');
+  require('/home/petra/Documents/webdev_tools_documets/php_one/Stranger_Languages_Classes_PHP/includes/confirmation.php');
   exit();
 }
 
