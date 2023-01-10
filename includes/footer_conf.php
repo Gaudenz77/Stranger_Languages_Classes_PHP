@@ -6,6 +6,7 @@
             <li><a href="index_elves.php" class="nav-link px-2 text-white">Learn Elvspeak</a></li>
             <li><a href="index.php" class="nav-link px-2 text-white">Learn Klingon</a></li>
             <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+            <li><a href="#" class="nav-link px-2 text-white"><?php echo  "© " . date("Y/m/d") ." &#129322" ?></a></li>
           </ul>
         </div>
       </footer>
