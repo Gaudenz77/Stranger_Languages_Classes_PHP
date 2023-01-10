@@ -87,16 +87,15 @@
 <!-- FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START -FORM START - FORM START - FORM START - -->
 <?php
 // define variables and set to empty values
-  $emailErr = $genderErr = $fNameErr = $lNameErr = $ageErr = $phoneErr = $levelErr = $commentaryErr = "";
+  $emailErr = $genderErr = $fNameErr = $lNameErr = $ageErr = $phoneErr = $levelErr = $commentaryErr =  "";
   $email = $gender = $fName = $lName = $age = $phone = $level = $commentary = "";
   $valid = true;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-
 if (empty($_POST["email"])) {
-    $valid=false;
-    $emailErr = "Email is required";
+  $valid=false;
+  $emailErr = "Email is required";
 } else {
   $email = test_input($_POST["email"]);
   // check if e-mail address is well-formed
@@ -111,6 +110,7 @@ if (empty($_POST["gender"])) {
 } else {
   $gender = test_input($_POST["gender"]);
 }
+ 
     
 if (empty($_POST["fName"])) {
   $valid=false;
@@ -126,12 +126,26 @@ if (empty($_POST["lName"])) {
   $lName = test_input($_POST["lName"]);
 }
 
+
 if (empty($_POST["age"])) {
   $valid=false;
   $ageErr = "Age is required";
-} else {
-  $age = test_input($_POST["age"]);
-}
+  
+} /* elseif (!preg_match ("/^[0-9]{2}*$/", $age)){
+  $valid=false;
+  $ageErr = "invalid";
+  
+}  *//* elseif ( $length < 2 && $length >  ) {
+  $age=strlen;
+  $valid=false;
+  $ageErr="only two digit";
+ 
+  } */
+
+  else {
+    $age = test_input($_POST["age"]);
+  }
+
 
 if (empty($_POST["phone"])) {
   $valid=false;
@@ -169,105 +183,118 @@ return $data;
 }
 ?>
           
-          <p><span class="error">* required field</span></p>
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <!-- method="post" onsubmit="return validateAll();"> -->
-                    <!-- <form action="confirmation.php" method="post" onsubmit="return validateAll();">  --> 
-                        <!-- <div id="errormessage"></div> -->
+<p><span class="error">* required field</span></p>  
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <!-- method="post" onsubmit="return validateAll();"> -->
+  <!-- <form action="confirmation.php" method="post" onsubmit="return validateAll();">  --> 
+                          <!-- <div id="errormessage"></div> -->
         
-                        <label for="valMail" class="form-label" style="margin-top: 20px;">E-mail adress:</label>
+                          <label for="valMail" class="form-label" style="margin-top: 20px;">E-mail adress:</label>
                           <!-- <p id="message-1" class="messageError"></p> -->
                           <span class="error">* <?php echo $emailErr;?></span><br>
                           <div class="mb-4 input-group">
-                            <span class="input-group-text">
-                              <i class="bi bi-envelope-at-fill"></i></span>
-                            <input type="email" class="form-control text-white bg-dark" name="email" id="valMail" value="<?php echo $email;?>" placeholder="e.g me@expl.com">
-                            <div class="input-group-text"  style="font-size: 80%"><label for="newsletter">Sub to Newsletter?</label>
-                              <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="" aria-label="Checkbox for following text input"></div>
-                            </div>
-        
-                        <label for="valGender" class="form-label">Gender</label>
-                        <!-- <p id="message-2" class="messageError"></p> -->
-                        <span class="error">* <?php echo $genderErr;?></span><br>
-                        <div class="mb-4 input-group">
                           <span class="input-group-text">
-                            <i class="fa-solid fa-mars-and-venus-burst"></i>
-                          </span>
-                              <select class="form-select text-white bg-dark" id="valGender" name="gender">
-                              <option value="" selected>-- Please choose an option --</option>
-                              <?php
-                                // while loop generation of animal names
-                                $gender = array("Male", "Female", "Binary");
-                                $i = 0;
-                                $length = count($gender);
-
-                                while ($i < $length) {
-                                    $g = $gender[$i]; 
-                                    // echo '<option value="' . $m . '">'  . $m .  '</option>';
-                                    // mit string template shorter and easier format ("")
-                                    echo "<option value='$g'>$g</option>";
-                                    $i++; // long form: $i = $i +1
-                                }
-                            ?>
-
-
-
-                              
-                              </select>
+                          <i class="bi bi-envelope-at-fill"></i></span>
+                            <input type="text" class="form-control text-white bg-dark" name="email" id="valMail" value="<?php echo $email;?>" placeholder="e.g me@expl.com">
+                            <div class="input-group-text"  style="font-size: 80%"><label for="newsletter">Sub to Newsletter?</label>
+                            <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="" aria-label="Checkbox for following text input"></div>
                           </div>
         
+                          <label for="valGender" class="form-label">Gender</label>
+                          <!-- <p id="message-2" class="messageError"></p> -->
+                          <span class="error">* <?php echo $genderErr;?></span><br>
+                          <div class="mb-4 input-group">
+                          <span class="input-group-text">
+                          <i class="fa-solid fa-mars-and-venus-burst"></i></span>
+                            <select class="form-select text-white bg-dark" id="valGender" name="gender">
+                                <option value="" selected>-- Please choose an option --<?php echo $_POST["gender"]; ?></option>
+                                  <?php
+                                    // while loop generation of gender types
+                                    $gender = array("Male", "Female", "Binary");
+                                    $i = 0;
+                                    $length = count($gender);
+
+                                    while ($i < $length) {
+                                        $g = $gender[$i]; 
+                                        // echo '<option value="' . $m . '">'  . $m .  '</option>';
+                                        // mit string template shorter and easier format ("")
+                                        echo "<option value='$g'>$g</option>";
+                                        $i++; // long form: $i = $i +1
+                                    }
+                                  ?>
+                            </select>
+                          </div>
+  <!-- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -->
+                          
+                          
+                         
+                          <label for="valGender" class="form-label">Gender</label>
+                          <span class="error">*<?php echo $genderErr;?></span><br>
+                          <div class="mb-4 input-group">
+                          <span class="input-group-text"><i class="fa-solid fa-circle-user m-1 py-2"></i></span>
+                          <div class="form-check form-check-inline m-3">
+                            <input class="form-check-input bg-dark" type="radio" name="exampleRadios" id="exampleRadios1" value="male">
+                            <label class="form-check-label text-white " for="inlineCheckbox1">Male</label>
+                          </div>
+                          <div class="form-check form-check-inline m-3">
+                            <input class="form-check-input bg-dark" type="radio" name="exampleRadios" id="exampleRadios1" value="female">
+                            <label class="form-check-label text-white " for="inlineCheckbox2">Female</label>
+                          </div>
+                          <div class="form-check form-check-inline m-3">
+                            <input class="form-check-input bg-dark" type="radio" name="exampleRadios" id="exampleRadios1" value="binary ">
+                            <label class="form-check-label text-white " for="inlineCheckbox3">Binary</label>
+                          </div>
+                        </div>
+
+  <!-- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -->
+
                             <label for="fName" class="form-label">First Name</label>
                             <!-- <p id="message-3" class="messageError"></p> -->
                             <span class="error">* <?php echo $fNameErr;?></span><br>
                             <div class="mb-4 input-group">
-                              <span class="input-group-text">
-                                <i class="fa-solid fa-circle-user"></i>
-                              </span>
-                              <input type="text" class="form-control text-white bg-dark" id="fName" name="fName" value="<?php echo $fName;?>" placeholder="e.g Gaudenz" >
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-circle-user"></i></span>
+                            <input type="text" class="form-control text-white bg-dark" id="fName" name="fName" value="<?php echo $fName;?>" placeholder="e.g Gaudenz" >
                             </div>
                             
-                          <label for="lName" class="form-label">Last Name</label>
-                          <!-- <p id="message-4" class="messageError"></p> -->
-                          <span class="error">* <?php echo $lNameErr;?></span><br>
+                            <label for="lName" class="form-label">Last Name</label>
+                            <!-- <p id="message-4" class="messageError"></p> -->
+                            <span class="error">* <?php echo $lNameErr;?></span><br>
                             <div class="mb-4 input-group">
-                              <span class="input-group-text">
-                                <i class="fa-solid fa-circle-user"></i>
-                              </span>
-                              <input type="text" class="form-control text-white bg-dark" id="lName" name="lName" value="<?php echo $lName;?>" placeholder="e.g Raiber" >
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-circle-user"></i></span>
+                            <input type="text" class="form-control text-white bg-dark" id="lName" name="lName" value="<?php echo $lName;?>" placeholder="e.g Raiber" >
                             </div>
         
                             <label for="valAge" class="form-label">Your Age</label>
                             <!-- <p id="message-5" class="messageError"></p> -->
                             <span class="error">* <?php echo $ageErr;?></span><br>
                             <div class="mb-4 input-group">
-                              <span class="input-group-text">
-                                <i class="fa-solid fa-circle-user"></i>
-                              </span>
-                              <input type="number" class="form-control text-white bg-dark" id="valAge" name="age" value="<?php echo $age;?>" placeholder="18 to 99"><!-- min="0" max="150" -->
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-circle-user"></i></span>
+                            <input type="number" class="form-control text-white bg-dark" id="valAge" name="age" value="<?php echo $age;?>" placeholder="18 to 99"><!-- min="0" max="150" -->
                             </div>                                                                                               
                           </div>
 
+<!-- right col large -- right col large -- right col large -- right col large -- right col large -->
+        <div class="col-sm mt-5 mb-4 px-5"> 
+                            <label for="telNumber" class="form-label" style="margin-top: 25px;">Enter your phone number:</label>
+                            <!-- <p id="message-6" class="messageError"></p> -->
+                            <span class="error">* <?php echo $phoneErr;?></span><br>
+                            <div class="mb-4 input-group">
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-phone-volume"></i></span>
+                            <input type="tel" class="form-control text-white bg-dark" id="telNumber" name="phone" value="<?php echo $phone;?>" placeholder="e.g 41-78-123-45-67" >
+                            </div>
+              <!-- <p>pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" format="+41781234567"</p> -->
 
-          <div class="col-sm mt-5 mb-4 px-5">
-          <label for="telNumber" class="form-label" style="margin-top: 25px;">Enter your phone number:</label>
-          <!-- <p id="message-6" class="messageError"></p> -->
-          <span class="error">* <?php echo $phoneErr;?></span><br>
-          <div class="mb-4 input-group">
-            <span class="input-group-text">
-              <i class="fa-solid fa-phone-volume"></i>
-              </span>
-            <input type="tel" class="form-control text-white bg-dark" id="telNumber" name="phone" value="<?php echo $phone;?>" placeholder="e.g 41-78-123-45-67" >
-          </div>
-  
-          <!-- <p>pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" format="+41781234567"</p> -->
-
-          <label for="classLevel" class="form-label">Class Level</label>
-          <!-- <p id="message-7" class="messageError"></p> -->
-          <span class="error">* <?php echo $levelErr;?></span><br>
-            <div class="mb-4 input-group">
-                  <span class="input-group-text">
-                  <i class="fa-solid fa-graduation-cap"></i></span>
-                  <select class="form-select text-white bg-dark" name="level" id="classLevel">
-                  <option value="" selected>-- Please choose a level --</option>
+                            <label for="classLevel" class="form-label">Class Level</label>
+                            <!-- <p id="message-7" class="messageError"></p> -->
+                            <span class="error">* <?php echo $levelErr;?></span><br>
+                            <div class="mb-4 input-group">
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-graduation-cap"></i></span>
+                            <select class="form-select text-white bg-dark" name="level" id="classLevel">
+                            <option value="" selected>-- Please choose a level --</option>
                             <?php
                                 // while loop generation of animal names
                                 $level = array("Beginner A0", "Advanced Degree B1", "Master Degree C3");
@@ -282,26 +309,25 @@ return $data;
                                     $i++; // long form: $i = $i +1
                                 }
                             ?>
-                </select>
-            </div>
-            <div class="form-floating mb-4 mt-5">
-              <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px" name="commentary"></textarea><p class="error">*<?php echo $commentaryErr;?></p>
-              <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary*...</label>
-              </div> 
-              <!-- hidden input -->
-              <input type="hidden" id="myHidden" name="custId" value="Elvespeak">
+                            </select>
+                            </div>
+            
+                            <div class="form-floating mb-4 mt-5">
+                            <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px" name="commentary"></textarea><p class="error">*<?php echo $commentaryErr;?></p>
+                            <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary*...<br><?php echo $commentary;?></label>
+                            </div> 
+                            <!-- hidden input -->
+                            <input type="hidden" id="myHidden" name="custId" value="Klingon">
 
-            <div class="mb-4 text-center">    
-              <input type="submit" class="btn btn-success" value="Submit">
-              <!-- <button type="submit" class="btn btn-secondary" value="register">submit</button> --></div>
-            </form>
+    <div class="mb-4 text-center">    
+    <input type="submit" class="btn btn-success" value="Submit">
+    <!-- <button type="submit" class="btn btn-secondary" value="register">submit</button> --></div>
+</form>
+            
 <!-- FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - -->
-
-            <!-- <div class="mb-4 text-center">
-              <button type="reset" class="btn btn-secondary">Reset</button>
-            </div> -->
     
-            <div><div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
               <strong>DISCLAIMER</strong> Follow this link for cookie policy
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div></div>

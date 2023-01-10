@@ -80,7 +80,8 @@
 
         <div class="filler"></div>
 
-        <div class="col-sm px-5" style="height:max-content;"> <!-- left col large -->
+<!-- left col large -- left col large -- left col large -- left col large -- left col large -- left col large -->
+        <div class="col-sm px-5" style="height:max-content;"> 
           <p class="title-font-lead">Fill out the following form<br>- and recheck your entries</p>
           <!-- <form id="formValidation" onsubmit="return validateAll();" action="./results.html"  method="get"> -->
 <!-- FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START - FORM START -FORM START - FORM START - FORM START - -->
@@ -182,9 +183,9 @@ return $data;
 }
 ?>
           
-<p><span class="error">* required field</span></p>
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <!-- method="post" onsubmit="return validateAll();"> -->
-                    <!-- <form action="confirmation.php" method="post" onsubmit="return validateAll();">  --> 
+<p><span class="error">* required field</span></p>  
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <!-- method="post" onsubmit="return validateAll();"> -->
+  <!-- <form action="confirmation.php" method="post" onsubmit="return validateAll();">  --> 
                           <!-- <div id="errormessage"></div> -->
         
                           <label for="valMail" class="form-label" style="margin-top: 20px;">E-mail adress:</label>
@@ -222,7 +223,7 @@ return $data;
                                   ?>
                             </select>
                           </div>
-<!-- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -->
+  <!-- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -- GENDER VARIANT CHECKBOX START -->
                           
                           
                          
@@ -244,61 +245,56 @@ return $data;
                           </div>
                         </div>
 
-<!-- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -->
+  <!-- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -- GENDER VARIANT CHECKBOX STOP -->
 
                             <label for="fName" class="form-label">First Name</label>
                             <!-- <p id="message-3" class="messageError"></p> -->
                             <span class="error">* <?php echo $fNameErr;?></span><br>
                             <div class="mb-4 input-group">
-                              <span class="input-group-text">
-                                <i class="fa-solid fa-circle-user"></i>
-                              </span>
-                              <input type="text" class="form-control text-white bg-dark" id="fName" name="fName" value="<?php echo $fName;?>" placeholder="e.g Gaudenz" >
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-circle-user"></i></span>
+                            <input type="text" class="form-control text-white bg-dark" id="fName" name="fName" value="<?php echo $fName;?>" placeholder="e.g Gaudenz" >
                             </div>
                             
                             <label for="lName" class="form-label">Last Name</label>
                             <!-- <p id="message-4" class="messageError"></p> -->
                             <span class="error">* <?php echo $lNameErr;?></span><br>
-                              <div class="mb-4 input-group">
-                                <span class="input-group-text">
-                                  <i class="fa-solid fa-circle-user"></i>
-                                </span>
-                                <input type="text" class="form-control text-white bg-dark" id="lName" name="lName" value="<?php echo $lName;?>" placeholder="e.g Raiber" >
-                              </div>
-        
-                              <label for="valAge" class="form-label">Your Age</label>
-                              <!-- <p id="message-5" class="messageError"></p> -->
-                              <span class="error">* <?php echo $ageErr;?></span><br>
-                              <div class="mb-4 input-group">
-                                <span class="input-group-text">
-                                  <i class="fa-solid fa-circle-user"></i>
-                                </span>
-                                <input type="number" class="form-control text-white bg-dark" id="valAge" name="age" value="<?php echo $age;?>" placeholder="18 to 99"><!-- min="0" max="150" -->
-                              </div>                                                                                               
+                            <div class="mb-4 input-group">
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-circle-user"></i></span>
+                            <input type="text" class="form-control text-white bg-dark" id="lName" name="lName" value="<?php echo $lName;?>" placeholder="e.g Raiber" >
                             </div>
+        
+                            <label for="valAge" class="form-label">Your Age</label>
+                            <!-- <p id="message-5" class="messageError"></p> -->
+                            <span class="error">* <?php echo $ageErr;?></span><br>
+                            <div class="mb-4 input-group">
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-circle-user"></i></span>
+                            <input type="number" class="form-control text-white bg-dark" id="valAge" name="age" value="<?php echo $age;?>" placeholder="18 to 99"><!-- min="0" max="150" -->
+                            </div>                                                                                               
+                          </div>
 
-
-        <div class="col-sm mt-5 mb-4 px-5"> <!-- right col large -->
+<!-- right col large -- right col large -- right col large -- right col large -- right col large -->
+        <div class="col-sm mt-5 mb-4 px-5"> 
                             <label for="telNumber" class="form-label" style="margin-top: 25px;">Enter your phone number:</label>
                             <!-- <p id="message-6" class="messageError"></p> -->
                             <span class="error">* <?php echo $phoneErr;?></span><br>
                             <div class="mb-4 input-group">
-                              <span class="input-group-text">
-                                <i class="fa-solid fa-phone-volume"></i>
-                                </span>
-                              <input type="tel" class="form-control text-white bg-dark" id="telNumber" name="phone" value="<?php echo $phone;?>" placeholder="e.g 41-78-123-45-67" >
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-phone-volume"></i></span>
+                            <input type="tel" class="form-control text-white bg-dark" id="telNumber" name="phone" value="<?php echo $phone;?>" placeholder="e.g 41-78-123-45-67" >
                             </div>
-  
-          <!-- <p>pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" format="+41781234567"</p> -->
+              <!-- <p>pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" format="+41781234567"</p> -->
 
-          <label for="classLevel" class="form-label">Class Level</label>
-          <!-- <p id="message-7" class="messageError"></p> -->
-          <span class="error">* <?php echo $levelErr;?></span><br>
-            <div class="mb-4 input-group">
-                  <span class="input-group-text">
-                  <i class="fa-solid fa-graduation-cap"></i></span>
-                  <select class="form-select text-white bg-dark" name="level" id="classLevel">
-                  <option value="" selected>-- Please choose a level --</option>
+                            <label for="classLevel" class="form-label">Class Level</label>
+                            <!-- <p id="message-7" class="messageError"></p> -->
+                            <span class="error">* <?php echo $levelErr;?></span><br>
+                            <div class="mb-4 input-group">
+                            <span class="input-group-text">
+                            <i class="fa-solid fa-graduation-cap"></i></span>
+                            <select class="form-select text-white bg-dark" name="level" id="classLevel">
+                            <option value="" selected>-- Please choose a level --</option>
                             <?php
                                 // while loop generation of animal names
                                 $level = array("Beginner A0", "Advanced Degree B1", "Master Degree C3");
@@ -313,38 +309,35 @@ return $data;
                                     $i++; // long form: $i = $i +1
                                 }
                             ?>
-                  </select>
-            </div>
+                            </select>
+                            </div>
             
-            <div class="form-floating mb-4 mt-5">
-              <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px" name="commentary"></textarea><p class="error">*<?php echo $commentaryErr;?></p>
-              <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary*...<br><?php echo $commentary;?></label>
-              </div> 
-              <!-- hidden input -->
-              <input type="hidden" id="myHidden" name="custId" value="Klingon">
+                            <div class="form-floating mb-4 mt-5">
+                            <textarea name="commentary" id="myComment" class="form-control text-white bg-dark" style="height: 140px" name="commentary"></textarea><p class="error">*<?php echo $commentaryErr;?></p>
+                            <label for="query" input type="text" style="color:white; margin-top:0.1%"><i class="fa-solid fa-message"></i> additional commentary*...<br><?php echo $commentary;?></label>
+                            </div> 
+                            <!-- hidden input -->
+                            <input type="hidden" id="myHidden" name="custId" value="Klingon">
 
-            <div class="mb-4 text-center">    
-              <input type="submit" class="btn btn-success" value="Submit">
-              <!-- <button type="submit" class="btn btn-secondary" value="register">submit</button> --></div>
-            </form>
+    <div class="mb-4 text-center">    
+    <input type="submit" class="btn btn-success" value="Submit">
+    <!-- <button type="submit" class="btn btn-secondary" value="register">submit</button> --></div>
+</form>
+            
 <!-- FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - FORM END - -->
-
-            <!-- <div class="mb-4 text-center">
-              <button type="reset" class="btn btn-secondary">Reset</button>
-            </div> -->
     
-            <div><div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <div>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
               <strong>DISCLAIMER</strong> Follow this link for cookie policy
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div></div>
+              </div>
+            </div>
             <div><a href="#" class="nav-link px-2 text-white text-end">back to top</a></div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
- 
 
     <section id="footer1">
       <footer>
