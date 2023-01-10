@@ -196,7 +196,7 @@ return $data;
                           <i class="bi bi-envelope-at-fill"></i></span>
                             <input type="text" class="form-control text-white bg-dark" name="email" id="valMail" value="<?php echo $email;?>" placeholder="e.g me@expl.com">
                             <div class="input-group-text"  style="font-size: 80%"><label for="newsletter">Sub to Newsletter?</label>
-                            <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="" aria-label="Checkbox for following text input"></div>
+                            <input class="form-check-input mt-0 mx-1" name="newsletter" id="newsletter" type="checkbox" value="yes" aria-label="Checkbox for following text input"></div>
                           </div>
         
                           <label for="valGender" class="form-label">Gender</label>
@@ -232,15 +232,15 @@ return $data;
                           <div class="mb-4 input-group">
                           <span class="input-group-text"><i class="fa-solid fa-circle-user m-1 py-2"></i></span>
                           <div class="form-check form-check-inline m-3">
-                            <input class="form-check-input bg-dark" type="radio" name="exampleRadios" id="exampleRadios1" value="male">
+                            <input class="form-check-input bg-dark" type="radio" name="genderRadio" id="genderRadio1" value="male">
                             <label class="form-check-label text-white " for="inlineCheckbox1">Male</label>
                           </div>
                           <div class="form-check form-check-inline m-3">
-                            <input class="form-check-input bg-dark" type="radio" name="exampleRadios" id="exampleRadios1" value="female">
+                            <input class="form-check-input bg-dark" type="radio" name="genderRadio" id="genderRadio1" value="female">
                             <label class="form-check-label text-white " for="inlineCheckbox2">Female</label>
                           </div>
                           <div class="form-check form-check-inline m-3">
-                            <input class="form-check-input bg-dark" type="radio" name="exampleRadios" id="exampleRadios1" value="binary ">
+                            <input class="form-check-input bg-dark" type="radio" name="genderRadio" id="genderRadio1" value="binary ">
                             <label class="form-check-label text-white " for="inlineCheckbox3">Binary</label>
                           </div>
                         </div>

@@ -30,15 +30,16 @@
                 require './includes/tools.php';
                 ?>
                            
-                <?php prettyPrint($_POST); ?>
+                <?php /*prettyPrint($_POST); */?>
 
-                <?php echo print_r($_POST); ?>
+                <?php /*echo print_r($_POST); */?>
    
                 Welcome <?php echo $_POST["fName"]; ?>!<br>
 
                 Your E-mail-address is: <?php echo $_POST["email"]; ?><br>
-                <!-- Want newsletter: <?php // echo $_POST["newsletter"]; ?> --> <br>
+                Want newsletter: <?php echo $_POST["newsletter"]; ?><br>
                 Your gender is: <?php echo $_POST["gender"]; ?><br>
+                Your gender (radio) is: <?php echo $_POST["genderRadio"]; ?><br>
                 Your first name is: <?php echo $_POST["fName"]; ?><br>
                 Your last name is: <?php echo $_POST["lName"]; ?><br>
                 Your age is: <?php echo $_POST["age"]; ?><br>
@@ -79,7 +80,9 @@ echo "<br>";
     }
 // Validate t f out of this form!
 ?><br>
-
+<p>
+Your chosen gender: <?php echo $_POST["gender"]; ?><br>
+</p>
 
 
                 </div>
@@ -94,7 +97,7 @@ echo "<br>";
 
 
         <?php
-                include './includes/footer_conf.php';
+                require './includes/footer_conf.php';
                 ?>
         
 </main>
