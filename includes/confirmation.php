@@ -46,7 +46,7 @@
                 Your age is: <?php echo $_POST["age"]; ?><br>
                 Your phone-no. is: <?php echo $_POST["phone"]; ?><br>
                 Your student level is: <?php echo $_POST["level"]; ?><br>
-                Your commentary is: <?php echo $_POST["commentary"]; ?><br>
+                <!-- Your commentary is: <?php echo $_POST["commentary"]; ?><br> -->
                 Your language chosen is: <?php echo $_POST["custId"]; ?><br>
 
   
@@ -81,9 +81,9 @@
                     }
                 // Validate t f out of this form!
                 ?><br>
-                <p>
+                <!-- <p>
                 Your chosen gender: <?php echo $_POST["gender"]; ?><br>
-                </p>
+                </p> -->
                 </div>
             </div>
             
