@@ -25,7 +25,8 @@ if (empty($_POST["gender"])) {
   $gender = test_input($_POST["gender"]);
 }
  
-    
+
+
 if (empty($_POST["fName"])) {
   $valid=false;
   $fNameErr = "First Name is required";
@@ -92,6 +93,10 @@ if($valid){
   exit();
 }
 
+
+
+
+
 }
 
 function test_input($data) {
@@ -101,3 +106,4 @@ $data = htmlspecialchars($data);
 return $data;
 }
 ?>
+
